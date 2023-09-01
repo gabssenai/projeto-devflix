@@ -3,7 +3,7 @@ import "./App.css"
 import { useEffect } from "react";
 import { useState } from "react";
 
-import logo from "../assets/devflix.png"
+import logo from "../assets/devflixpgpc 2.png"
 import searchIcon from "../assets/search.svg"
 
 import MovieCard from "../components/movieCard/movieCard";
@@ -35,27 +35,72 @@ const App = () => {
 
     return (
         <div id="app">
-            <div className="logo">
-                <img src={logo} alt="" />
+            <div className="header">
+                <div className="logo">
+                    <img src={logo} alt="" />
+                </div>
+                <div className="linkMenu">
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Séries</a></li>
+                        <li><a href="#">Filmes</a></li>
+                    </ul>
+                </div>
+                <div className="search">
+                    <input
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onKeyDown={handleKeyPress}
+                    />
+                    <ion-icon name="search-outline" size="large" onClick={() => searchMovies(searchTerm)} ></ion-icon>
+                </div>
             </div>
-            <div className="search">
-                <input
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyDown={handleKeyPress}
-                    placeholder="Pesquise por filmes"
-                />
-                <img src={searchIcon} alt="Icone de pesquisa" onClick={() => searchMovies(searchTerm)} />
-            </div>
+
+
+            <div className="h1tprt"><h1>Lançamentos</h1><ion-icon name="chevron-forward-outline"></ion-icon></div>
             {movies?.length > 0 ? (
-                <div className="container">
-                    {movies.map((movie) => (<MovieCard key={movie.imdbID} movies={movie} />))}
+                <div className="container"><section className="ladoalado">
+                    {movies.map((movie) => (<MovieCard key={movie.imdbID} movies={movie} />))}</section>
                 </div>
             ) : (
                 <div className="empty">
                     <h2>Nnehum filme encontrado 🦈</h2>
                 </div>
             )}
+
+            <div className="h1tprt"><h1>Em alta</h1><ion-icon name="chevron-forward-outline"></ion-icon></div>
+            {movies?.length > 0 ? (
+                <div className="container"><section className="ladoalado">
+                    {movies.map((movie) => (<MovieCard key={movie.imdbID} movies={movie} />))}</section>
+                </div>
+            ) : (
+                <div className="empty">
+                    <h2>Nnehum filme encontrado 🦈</h2>
+                </div>
+            )}
+
+            <div className="h1tprt"><h1>Comédia</h1><ion-icon name="chevron-forward-outline"></ion-icon></div>
+            {movies?.length > 0 ? (
+                <div className="container"><section className="ladoalado">
+                    {movies.map((movie) => (<MovieCard key={movie.imdbID} movies={movie} />))}</section>
+                </div>
+            ) : (
+                <div className="empty">
+                    <h2>Nnehum filme encontrado 🦈</h2>
+                </div>
+            )}
+
+            <div className="h1tprt"><h1>Ação</h1><ion-icon name="chevron-forward-outline"></ion-icon></div>
+            {movies?.length > 0 ? (
+                <div className="container"><section className="ladoalado">
+                    {movies.map((movie) => (<MovieCard key={movie.imdbID} movies={movie} />))}</section>
+                </div>
+            ) : (
+                <div className="empty">
+                    <h2>Nnehum filme encontrado 🦈</h2>
+                </div>
+            )}
+
             <Footer link={"https:github.com.br"}>GabsAlcaide</Footer>
         </div>
     )

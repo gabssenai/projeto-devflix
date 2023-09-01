@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --font-raleway:"Raleway", sans-serif;
+    --font-raleway: "Raleway", sans-serif;
 }
 
 * {
@@ -18,37 +18,54 @@ body {
 
 #app {
     padding: 4em;
+    padding-top: 0.3em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.logo {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.logo:hover {
-    transform: scale(1.05, 1.05);
-}
+.logo {}
 
 .logo img {
-    width: 70%;
+    width: 15em;
     height: auto;
-    display: block;
-    margin: auto;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.linkMenu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    font-size: 20px;
+    list-style: none;
+    padding: 1em;
+}
+
+.linkMenu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.linkMenu ul li a:hover {
+    color: #00A3FF;
 }
 
 .search {
-    width: 70%;
-    margin: 4rem 0 2rem;
+    width: 30em;
+    /* margin: 0rem 0 2rem; */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 1.75rem;
+    padding: 0.1rem 0.6rem;
     border-radius: 4rem;
-    background: #1f2123;
+    background: #64697A;
     box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
     -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
@@ -59,15 +76,15 @@ body {
     padding-right: 1rem;
     outline: none;
     color: #a1a1a1;
-    background: #1f2123;
+    background: #64697A;
     font-size: 1.6rem;
     font-weight: 500;
 }
 
-.search img {
-    width: 35px;
-    height: 35px;
+.search ion-icon {
+
     cursor: pointer;
+    color: #000;
 }
 
 .empty {
@@ -80,18 +97,38 @@ body {
     color: #f9d3b4;
 }
 
+.h1tprt {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.ladoalado {
+    display: flex;
+}
+
 .container {
     width: 100%;
     margin-top: 3rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
 }
 
-@media screen and (max-width: 600px) {
-    .app {
-        padding: 4rem 2rem;
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 770px) {
+    #app {
+        padding: 2rem 2rem;
     }
 
     .search {
@@ -107,9 +144,16 @@ body {
         width: 20px;
         height: 20px;
     }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     .app {
         padding: 4rem 1rem;
     }
